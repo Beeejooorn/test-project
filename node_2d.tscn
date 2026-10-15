@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cf78mdoun6yfq"]
+
+[ext_resource type="Texture2D" uid="uid://neinc785lt3k" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://c68qrnjnlqtwm" path="res://icon.gd" id="2_0e48y"]
+[ext_resource type="AudioStream" uid="uid://cdthjtk5ygac0" path="res://Pickup_coin 1.wav" id="3_epypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwp47"]
+size = Vector2(43.5, 38.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lwp47"]
+radius = 25.298222
+
+[node name="Node2D" type="Node2D" unique_id=1078545395]
+
+[node name="Icon" type="Area2D" parent="." unique_id=2139466529]
+modulate = Color(0.67833483, 0.47420186, 0, 1)
+position = Vector2(311, 365)
+scale = Vector2(2, 2)
+script = ExtResource("2_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon" unique_id=258560039]
+position = Vector2(11.75, 9.25)
+shape = SubResource("RectangleShape2D_lwp47")
+
+[node name="Sprite2D" type="Sprite2D" parent="Icon" unique_id=1191823060]
+position = Vector2(1, -2.5)
+texture = ExtResource("1_wtcfe")
+
+[node name="Label" type="Label" parent="." unique_id=638928281]
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 48.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+
+[node name="Coin" type="Area2D" parent="." unique_id=1397756959]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(586, 381)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin" unique_id=1606659874]
+position = Vector2(6, 2)
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("CircleShape2D_lwp47")
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin" unique_id=1580087630]
+position = Vector2(-4, -6)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_wtcfe")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Coin" unique_id=2108472397]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(180, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 500.0
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+color = Color(0.8531604, 0.9263699, 0.15263754, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Coin" unique_id=248122857]
+stream = ExtResource("3_epypp")
+
+[connection signal="area_entered" from="Coin" to="Icon" method="_on_coin_area_entered"]
