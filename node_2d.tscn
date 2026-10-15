@@ -1,11 +1,75 @@
 [gd_scene format=3 uid="uid://cf78mdoun6yfq"]
 
-[ext_resource type="Texture2D" uid="uid://neinc785lt3k" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://c68qrnjnlqtwm" path="res://icon.gd" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://ckyf65nk8q51v" path="res://Attack2.png" id="2_0hol4"]
+[ext_resource type="Texture2D" uid="uid://bdnrkwx33vx37" path="res://coin-1.png" id="3_0hol4"]
 [ext_resource type="AudioStream" uid="uid://cdthjtk5ygac0" path="res://Pickup_coin 1.wav" id="3_epypp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwp47"]
 size = Vector2(43.5, 38.5)
+
+[sub_resource type="Animation" id="Animation_0hol4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q6r6c"]
+resource_name = "swing"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-30, 0), Vector2(-30, 0), Vector2(55, 0), Vector2(27.5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kdubu"]
+_data = {
+&"RESET": SubResource("Animation_0hol4"),
+&"swing": SubResource("Animation_q6r6c")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lwp47"]
 radius = 25.298222
@@ -14,17 +78,23 @@ radius = 25.298222
 
 [node name="Icon" type="Area2D" parent="." unique_id=2139466529]
 modulate = Color(0.67833483, 0.47420186, 0, 1)
-position = Vector2(311, 365)
+position = Vector2(472, 264)
 scale = Vector2(2, 2)
 script = ExtResource("2_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon" unique_id=258560039]
-position = Vector2(11.75, 9.25)
+position = Vector2(38.5, -6)
 shape = SubResource("RectangleShape2D_lwp47")
 
 [node name="Sprite2D" type="Sprite2D" parent="Icon" unique_id=1191823060]
-position = Vector2(1, -2.5)
-texture = ExtResource("1_wtcfe")
+texture_filter = 1
+position = Vector2(-17.5, 2)
+texture = ExtResource("2_0hol4")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Icon" unique_id=1383786863]
+libraries/ = SubResource("AnimationLibrary_kdubu")
+autoplay = &"swing"
 
 [node name="Label" type="Label" parent="." unique_id=638928281]
 offset_left = 8.0
@@ -36,7 +106,7 @@ text = "Score: 0"
 
 [node name="Coin" type="Area2D" parent="." unique_id=1397756959]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(586, 381)
+position = Vector2(603, 394)
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin" unique_id=1606659874]
@@ -46,8 +116,8 @@ shape = SubResource("CircleShape2D_lwp47")
 
 [node name="Sprite2D" type="Sprite2D" parent="Coin" unique_id=1580087630]
 position = Vector2(-4, -6)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_wtcfe")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_0hol4")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Coin" unique_id=2108472397]
 emitting = false

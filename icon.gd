@@ -17,11 +17,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# Keep spinning!
-	rotation += 2.0 * delta
 	
 	# Get keyboard input
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	# Flip character and sword collision shape based on movement direction
+	if input_dir.x < 0:
+		scale.x = -1
+	elif input_dir.x > 0:
+		scale.x = 1
 	
 	# Move character
 	position += input_dir * 300.0 * delta
