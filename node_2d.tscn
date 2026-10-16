@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://cf78mdoun6yfq"]
 
+[ext_resource type="Texture2D" uid="uid://dgp3e7drdynx3" path="res://docs/Grass.png" id="1_q6r6c"]
 [ext_resource type="Script" uid="uid://c68qrnjnlqtwm" path="res://icon.gd" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://ckyf65nk8q51v" path="res://Attack2.png" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://bdnrkwx33vx37" path="res://coin-1.png" id="3_0hol4"]
 [ext_resource type="AudioStream" uid="uid://cdthjtk5ygac0" path="res://Pickup_coin 1.wav" id="3_epypp"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwp47"]
+atlas = ExtResource("1_q6r6c")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwp47"]
-size = Vector2(43.5, 38.5)
+size = Vector2(23.75, 40.25)
 
 [sub_resource type="Animation" id="Animation_0hol4"]
 length = 0.001
@@ -76,6 +81,13 @@ radius = 25.298222
 
 [node name="Node2D" type="Node2D" unique_id=1078545395]
 
+[node name="grass_bg" type="TextureRect" parent="." unique_id=1380598423]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = SubResource("AtlasTexture_lwp47")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="Icon" type="Area2D" parent="." unique_id=2139466529]
 modulate = Color(0.67833483, 0.47420186, 0, 1)
 position = Vector2(472, 264)
@@ -83,7 +95,7 @@ scale = Vector2(2, 2)
 script = ExtResource("2_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon" unique_id=258560039]
-position = Vector2(38.5, -6)
+position = Vector2(21.625, -8.875)
 shape = SubResource("RectangleShape2D_lwp47")
 
 [node name="Sprite2D" type="Sprite2D" parent="Icon" unique_id=1191823060]
