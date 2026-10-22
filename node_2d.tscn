@@ -86,7 +86,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuvck"]
-size = Vector2(36, 47)
+size = Vector2(23.25, 35.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d21ai"]
 radius = 50.159744
@@ -102,6 +102,9 @@ size = Vector2(71, 234)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fyc57"]
 size = Vector2(33, 80.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
+size = Vector2(29, 28)
 
 [node name="Node2D" type="Node2D" unique_id=1078545395]
 y_sort_enabled = true
@@ -148,7 +151,7 @@ shape = SubResource("RectangleShape2D_54o87")
 [node name="Icon" type="CharacterBody2D" parent="." unique_id=1144470833]
 modulate = Color(0.67833483, 0.47420186, 0, 1)
 y_sort_enabled = true
-position = Vector2(477, 414)
+position = Vector2(648, 379)
 scale = Vector2(2, 2)
 script = ExtResource("2_0e48y")
 
@@ -158,7 +161,8 @@ shape = SubResource("RectangleShape2D_lwp47")
 
 [node name="Sprite2D" type="Sprite2D" parent="Icon" unique_id=1191823060]
 texture_filter = 1
-position = Vector2(-17.5, 2)
+position = Vector2(-12.5, 2.5)
+scale = Vector2(0.70416665, 0.70416665)
 texture = ExtResource("2_0hol4")
 hframes = 5
 
@@ -170,7 +174,7 @@ autoplay = &"swing"
 position = Vector2(41.5, -7.5)
 
 [node name="SwordHitbox" type="CollisionShape2D" parent="Icon/Sword_HitBox" unique_id=1633133618]
-position = Vector2(2.5, 0)
+position = Vector2(-12.625, 2.625)
 shape = SubResource("RectangleShape2D_uuvck")
 
 [node name="Label" type="Label" parent="." unique_id=638928281]
@@ -303,6 +307,346 @@ region_rect = Rect2(2, 427, 123, 206)
 position = Vector2(4, 61)
 shape = SubResource("RectangleShape2D_fyc57")
 
+[node name="Prop_RockWall_Left" type="StaticBody2D" parent="Props" unique_id=1284904401]
+y_sort_enabled = true
+position = Vector2(16, 332)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left" unique_id=1578617862]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left" unique_id=1896537209]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left5" type="StaticBody2D" parent="Props" unique_id=287169531]
+y_sort_enabled = true
+position = Vector2(17, 301)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left5" unique_id=280075717]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left5" unique_id=303665286]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left6" type="StaticBody2D" parent="Props" unique_id=812380930]
+y_sort_enabled = true
+position = Vector2(16, 270)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left6" unique_id=335989710]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left6" unique_id=1495938195]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left7" type="StaticBody2D" parent="Props" unique_id=639320387]
+y_sort_enabled = true
+position = Vector2(17, 239)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left7" unique_id=1006917404]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left7" unique_id=320376216]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left8" type="StaticBody2D" parent="Props" unique_id=1474500585]
+y_sort_enabled = true
+position = Vector2(16, 207)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left8" unique_id=613229839]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left8" unique_id=2037505214]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left9" type="StaticBody2D" parent="Props" unique_id=1586466715]
+y_sort_enabled = true
+position = Vector2(17, 176)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left9" unique_id=153676026]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left9" unique_id=1840579292]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left10" type="StaticBody2D" parent="Props" unique_id=666195211]
+y_sort_enabled = true
+position = Vector2(17, 143)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left10" unique_id=394071504]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left10" unique_id=173427215]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left11" type="StaticBody2D" parent="Props" unique_id=1818147972]
+y_sort_enabled = true
+position = Vector2(16, 111)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left11" unique_id=1595475764]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left11" unique_id=83693821]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left12" type="StaticBody2D" parent="Props" unique_id=1036394699]
+y_sort_enabled = true
+position = Vector2(16, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left12" unique_id=1079069759]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left12" unique_id=472329106]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left2" type="StaticBody2D" parent="Props" unique_id=401008453]
+y_sort_enabled = true
+position = Vector2(15, 397)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left2" unique_id=817347448]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left2" unique_id=1527777420]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left3" type="StaticBody2D" parent="Props" unique_id=563117990]
+y_sort_enabled = true
+position = Vector2(15, 365)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left3" unique_id=1363696173]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left3" unique_id=2078321076]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left4" type="StaticBody2D" parent="Props" unique_id=1099043111]
+y_sort_enabled = true
+position = Vector2(17, 431)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left4" unique_id=1296653346]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left4" unique_id=1638821715]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left13" type="StaticBody2D" parent="Props" unique_id=1745198092]
+y_sort_enabled = true
+position = Vector2(17, 431)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left13" unique_id=1916633494]
+position = Vector2(-0.5, 30)
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left13" unique_id=2130284685]
+position = Vector2(0, 31)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left14" type="StaticBody2D" parent="Props" unique_id=1057289272]
+y_sort_enabled = true
+position = Vector2(1261, 331)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left14" unique_id=1202728813]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left14" unique_id=451560746]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left15" type="StaticBody2D" parent="Props" unique_id=1568172837]
+y_sort_enabled = true
+position = Vector2(1262, 300)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left15" unique_id=1777343008]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left15" unique_id=1097227358]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left16" type="StaticBody2D" parent="Props" unique_id=403342243]
+y_sort_enabled = true
+position = Vector2(1261, 269)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left16" unique_id=68374464]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left16" unique_id=1689313097]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left17" type="StaticBody2D" parent="Props" unique_id=826277589]
+y_sort_enabled = true
+position = Vector2(1262, 238)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left17" unique_id=512521676]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left17" unique_id=629761584]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left18" type="StaticBody2D" parent="Props" unique_id=984437338]
+y_sort_enabled = true
+position = Vector2(1261, 206)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left18" unique_id=1679464864]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left18" unique_id=1713163451]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left19" type="StaticBody2D" parent="Props" unique_id=397063063]
+y_sort_enabled = true
+position = Vector2(1262, 175)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left19" unique_id=1738399053]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left19" unique_id=1338046533]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left20" type="StaticBody2D" parent="Props" unique_id=1673881076]
+y_sort_enabled = true
+position = Vector2(1262, 142)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left20" unique_id=1448256944]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left20" unique_id=596241848]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left21" type="StaticBody2D" parent="Props" unique_id=292079050]
+y_sort_enabled = true
+position = Vector2(1261, 110)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left21" unique_id=521587708]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left21" unique_id=1774850447]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left22" type="StaticBody2D" parent="Props" unique_id=831315179]
+y_sort_enabled = true
+position = Vector2(1261, 79)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left22" unique_id=1994336122]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left22" unique_id=1368162460]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left23" type="StaticBody2D" parent="Props" unique_id=2036856954]
+y_sort_enabled = true
+position = Vector2(1260, 396)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left23" unique_id=2111021024]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left23" unique_id=177517965]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left24" type="StaticBody2D" parent="Props" unique_id=224300498]
+y_sort_enabled = true
+position = Vector2(1260, 364)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left24" unique_id=144886868]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left24" unique_id=622718343]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left25" type="StaticBody2D" parent="Props" unique_id=1148057048]
+y_sort_enabled = true
+position = Vector2(1262, 430)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left25" unique_id=50437471]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left25" unique_id=1793773700]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Prop_RockWall_Left26" type="StaticBody2D" parent="Props" unique_id=1849830138]
+y_sort_enabled = true
+position = Vector2(1262, 430)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_RockWall_Left26" unique_id=2070429423]
+position = Vector2(-0.5, 30)
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(33, 480, 33, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_RockWall_Left26" unique_id=1584590097]
+position = Vector2(0, 31)
+shape = SubResource("RectangleShape2D_4d7sh")
+
 [node name="Foliage" type="Node2D" parent="." unique_id=1015684585]
 position = Vector2(221, 273)
 
@@ -328,5 +672,32 @@ position = Vector2(757, 245)
 texture = ExtResource("8_rj586")
 region_enabled = true
 region_rect = Rect2(813, 27, 70, 61)
+
+[node name="Paths" type="Node2D" parent="." unique_id=268879627]
+
+[node name="Center_Plinth" type="Sprite2D" parent="Paths" unique_id=166601200]
+position = Vector2(640, 420)
+scale = Vector2(1.3018868, 1.2101449)
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(222, 246, 106, 69)
+
+[node name="Path_Tile_1" type="Sprite2D" parent="Paths" unique_id=188979125]
+position = Vector2(639, 301)
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(213, 312, 118, 101)
+
+[node name="Path_Tile_3" type="Sprite2D" parent="Paths" unique_id=1384022324]
+position = Vector2(628, 233)
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(213, 312, 118, 101)
+
+[node name="Path_Tile_2" type="Sprite2D" parent="Paths" unique_id=888374169]
+position = Vector2(646, 362)
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(213, 312, 118, 101)
 
 [connection signal="area_entered" from="Coin" to="Icon" method="_on_coin_area_entered"]
