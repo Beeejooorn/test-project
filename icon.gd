@@ -5,20 +5,25 @@ const SPEED := 300.0
 var score := 0
 var facing := 1.0
 var sword_dist := 0.0
+var body_dist := 0.0
 
 @onready var label: Label = $"../Label"
 @onready var coin = $"../Coin"
 @onready var coin_shape: CollisionShape2D = $"../Coin/CollisionShape2D"
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var body_shape: CollisionShape2D = $Hero_Body_collbox
 @onready var hitbox: Area2D = $Sword_HitBox
 @onready var hitbox_shape: CollisionShape2D = $Sword_HitBox.get_child(0)
 
 func _ready() -> void:
-	# Distance of the sword box from the sprite's flip point, as placed on the RIGHT side
+	# Sword box distance from the sprite's flip point (placed on the RIGHT side)
 	var box_x := hitbox.position.x + hitbox_shape.position.x
 	sword_dist = box_x - sprite.position.x
 	hitbox.position.x = 0
 	hitbox_shape.disabled = false
+
+	# Body box distance from the sprite's flip point (as placed on the body when facing right)
+	body_dist = body_shape.position.x - sprite.position.x
 
 func _physics_process(_delta: float) -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -30,8 +35,9 @@ func _physics_process(_delta: float) -> void:
 		sprite.scale.x = abs(sprite.scale.x)
 		facing = 1.0
 
-	# Mirror the sword box around the sprite's flip point, same distance on each side
+	# Mirror both boxes around the sprite's flip point
 	hitbox_shape.position.x = sprite.position.x + sword_dist * facing
+	body_shape.position.x = sprite.position.x + body_dist * facing
 
 	velocity = input_dir * SPEED
 	move_and_slide()

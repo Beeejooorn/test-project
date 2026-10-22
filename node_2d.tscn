@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bdnrkwx33vx37" path="res://coin-1.png" id="3_0hol4"]
 [ext_resource type="AudioStream" uid="uid://cdthjtk5ygac0" path="res://Pickup_coin 1.wav" id="3_epypp"]
 [ext_resource type="Script" uid="uid://bbhg28171axx1" path="res://coin.gd" id="4_d21ai"]
+[ext_resource type="Texture2D" uid="uid://url3getws7l4" path="res://docs/Plants.png" id="8_rj586"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lwp47"]
 atlas = ExtResource("1_q6r6c")
@@ -85,20 +86,25 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuvck"]
+size = Vector2(36, 47)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d21ai"]
 radius = 50.159744
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2j71"]
-size = Vector2(47, 203)
+size = Vector2(73, 218)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
-size = Vector2(188, 80)
+size = Vector2(188, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
-size = Vector2(48, 223)
+size = Vector2(71, 234)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyc57"]
+size = Vector2(33, 80.5)
 
 [node name="Node2D" type="Node2D" unique_id=1078545395]
+y_sort_enabled = true
 
 [node name="grass_bg" type="TextureRect" parent="." unique_id=1380598423]
 offset_right = 1280.0
@@ -141,6 +147,7 @@ shape = SubResource("RectangleShape2D_54o87")
 
 [node name="Icon" type="CharacterBody2D" parent="." unique_id=1144470833]
 modulate = Color(0.67833483, 0.47420186, 0, 1)
+y_sort_enabled = true
 position = Vector2(477, 414)
 scale = Vector2(2, 2)
 script = ExtResource("2_0e48y")
@@ -160,10 +167,10 @@ libraries/ = SubResource("AnimationLibrary_kdubu")
 autoplay = &"swing"
 
 [node name="Sword_HitBox" type="Area2D" parent="Icon" unique_id=1814314103]
-position = Vector2(25, -17)
+position = Vector2(41.5, -7.5)
 
 [node name="SwordHitbox" type="CollisionShape2D" parent="Icon/Sword_HitBox" unique_id=1633133618]
-position = Vector2(3.5, 0)
+position = Vector2(2.5, 0)
 shape = SubResource("RectangleShape2D_uuvck")
 
 [node name="Label" type="Label" parent="." unique_id=638928281]
@@ -177,7 +184,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Coin" type="Area2D" parent="." unique_id=1397756959]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(603, 394)
+position = Vector2(749, 317)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("4_d21ai")
 
@@ -214,7 +221,7 @@ region_enabled = true
 region_rect = Rect2(193.15002, -0.10999966, 82.27997, 185.13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Statue_Left" unique_id=1761716434]
-position = Vector2(16.5, 0.5)
+position = Vector2(15.5, 8)
 shape = SubResource("RectangleShape2D_t2j71")
 
 [node name="Portal_Shrine" type="StaticBody2D" parent="." unique_id=1465052369]
@@ -228,7 +235,7 @@ region_enabled = true
 region_rect = Rect2(4.389984, 140.38998, 185.05997, 123.28003)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_Shrine" unique_id=446399361]
-position = Vector2(23, 54)
+position = Vector2(0, 61)
 shape = SubResource("RectangleShape2D_d21ai")
 
 [node name="Statue_Right" type="StaticBody2D" parent="." unique_id=776978930]
@@ -242,7 +249,84 @@ region_enabled = true
 region_rect = Rect2(193.15002, -0.10999966, 82.27997, 185.13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Statue_Right" unique_id=2010245585]
-position = Vector2(29, -3.5)
+position = Vector2(22.5, 2)
 shape = SubResource("RectangleShape2D_rj586")
+
+[node name="Props" type="Node2D" parent="." unique_id=1654361122]
+y_sort_enabled = true
+
+[node name="Prop_Tree_Left" type="StaticBody2D" parent="Props" unique_id=1186667054]
+position = Vector2(426, 117)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_Tree_Left" unique_id=454711243]
+texture = ExtResource("8_rj586")
+region_enabled = true
+region_rect = Rect2(2, 427, 123, 206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_Tree_Left" unique_id=837749604]
+position = Vector2(4, 61)
+shape = SubResource("RectangleShape2D_fyc57")
+
+[node name="Prop_Obelisk_Left" type="StaticBody2D" parent="Props" unique_id=1977915145]
+position = Vector2(117, 552)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_Obelisk_Left" unique_id=1897947105]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(0, -1, 67, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_Obelisk_Left" unique_id=941837974]
+position = Vector2(0, 2.75)
+shape = SubResource("RectangleShape2D_fyc57")
+
+[node name="Prop_Obelisk_Right" type="StaticBody2D" parent="Props" unique_id=1537521020]
+position = Vector2(1163, 552)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_Obelisk_Right" unique_id=2035203121]
+texture = ExtResource("2_kdubu")
+region_enabled = true
+region_rect = Rect2(0, -1, 67, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_Obelisk_Right" unique_id=420999065]
+position = Vector2(0, 2.75)
+shape = SubResource("RectangleShape2D_fyc57")
+
+[node name="Prop_Tree_Right" type="StaticBody2D" parent="Props" unique_id=1872083629]
+position = Vector2(800, 117)
+
+[node name="Sprite2D" type="Sprite2D" parent="Props/Prop_Tree_Right" unique_id=1284926093]
+texture = ExtResource("8_rj586")
+region_enabled = true
+region_rect = Rect2(2, 427, 123, 206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Prop_Tree_Right" unique_id=735703164]
+position = Vector2(4, 61)
+shape = SubResource("RectangleShape2D_fyc57")
+
+[node name="Foliage" type="Node2D" parent="." unique_id=1015684585]
+position = Vector2(221, 273)
+
+[node name="Bush_01" type="Sprite2D" parent="Foliage" unique_id=2122628956]
+texture = ExtResource("8_rj586")
+region_enabled = true
+region_rect = Rect2(813, 27, 70, 61)
+
+[node name="Bush_02" type="Sprite2D" parent="Foliage" unique_id=1402469249]
+position = Vector2(212, 286)
+texture = ExtResource("8_rj586")
+region_enabled = true
+region_rect = Rect2(813, 27, 70, 61)
+
+[node name="Bush_03" type="Sprite2D" parent="Foliage" unique_id=2016766567]
+position = Vector2(732, 26)
+texture = ExtResource("8_rj586")
+region_enabled = true
+region_rect = Rect2(813, 27, 70, 61)
+
+[node name="Bush_04" type="Sprite2D" parent="Foliage" unique_id=580503736]
+position = Vector2(757, 245)
+texture = ExtResource("8_rj586")
+region_enabled = true
+region_rect = Rect2(813, 27, 70, 61)
 
 [connection signal="area_entered" from="Coin" to="Icon" method="_on_coin_area_entered"]
